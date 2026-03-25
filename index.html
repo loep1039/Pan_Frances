@@ -10,6 +10,7 @@
         .card-shadow { box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1); }
         input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
         input[type=number] { -moz-appearance: textfield; }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body class="p-4 md:p-8 font-sans text-slate-800 flex flex-col items-center">
@@ -20,7 +21,7 @@
                 <h1 class="text-2xl font-black uppercase tracking-tight">Pan Francés</h1>
                 <p class="text-indigo-100 text-[10px] font-bold uppercase tracking-widest italic">Sistema de Gestión - Fernando Araujo</p>
             </div>
-            <button onclick="verificarAcceso()" class="bg-white/10 p-2 rounded-full hover:bg-white/20 border border-white/20">
+            <button onclick="verificarAcceso()" class="bg-white/10 p-2 rounded-full hover:bg-white/20 border border-white/20 transition-all active:scale-90">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
@@ -29,24 +30,24 @@
 
         <div class="bg-white rounded-2xl card-shadow border border-indigo-50 p-6 mb-6">
             
-            <div id="settings-panel" class="hidden bg-slate-50 p-4 rounded-xl border-2 border-dashed border-indigo-100 mb-6">
+            <div id="settings-panel" class="hidden bg-slate-50 p-4 rounded-xl border-2 border-dashed border-indigo-200 mb-6">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-[10px] font-black text-slate-400 uppercase">Ajuste de Precios por Gramo ($)</h3>
-                    <button onclick="cerrarAjustes()" class="text-red-500 text-[10px] font-bold uppercase">Cerrar</button>
+                    <h3 class="text-[10px] font-black text-indigo-400 uppercase tracking-widest">Ajuste de Precios por Gramo ($)</h3>
+                    <button onclick="cerrarAjustes()" class="text-red-500 text-[10px] font-bold uppercase hover:bg-red-50 px-2 py-1 rounded">Cerrar</button>
                 </div>
                 <div id="prices-editor" class="grid grid-cols-1 gap-2 mb-4"></div>
-                <button onclick="savePrices()" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-lg text-xs">GUARDAR PRECIOS</button>
+                <button onclick="savePrices()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-lg text-xs shadow-md active:bg-indigo-800 uppercase">Guardar Cambios</button>
             </div>
 
-            <div class="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100 mb-6">
-                <label class="text-[10px] font-bold text-indigo-900 uppercase block mb-2 text-center">Cantidad de Panes a Elaborar</label>
-                <input type="number" id="cantidadPanes" value="1" min="0" oninput="calcular()" class="w-full bg-white p-3 rounded-lg border border-indigo-200 outline-none text-3xl font-black text-center text-indigo-900 shadow-sm focus:ring-2 focus:ring-indigo-500">
+            <div class="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100 mb-6 text-center">
+                <label class="text-[10px] font-bold text-indigo-900 uppercase block mb-2 tracking-widest">Cantidad de Panes</label>
+                <input type="number" id="cantidadPanes" value="1" min="0" oninput="calcular()" class="w-full bg-white p-3 rounded-lg border border-indigo-200 outline-none text-3xl font-black text-center text-indigo-900 shadow-inner focus:ring-2 focus:ring-indigo-500">
             </div>
 
-            <table class="w-full mb-6">
+            <table class="w-full mb-6 text-left">
                 <thead>
                     <tr class="text-slate-400 text-[9px] uppercase border-b border-slate-100">
-                        <th class="py-2 text-left">Ingrediente</th>
+                        <th class="py-2">Ingrediente</th>
                         <th class="py-2 text-right">Peso (g)</th>
                         <th class="py-2 text-right">Costo ($)</th>
                     </tr>
@@ -65,25 +66,25 @@
             </table>
 
             <button onclick="copyToClipboard()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl text-xs shadow-lg transition-all active:scale-95 uppercase tracking-widest">
-                Copiar Receta para WhatsApp
+                Copiar para WhatsApp
             </button>
         </div>
 
         <footer class="text-center pb-10">
-            <a href="https://loep1039.github.io/mi-panaderia/" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-bold text-sm transition-colors group">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="https://loep1039.github.io/mi-panaderia/" class="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-600 font-bold text-[10px] uppercase tracking-widest transition-all group">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-                Volver al Menú Principal
+                Menú Principal
             </a>
         </footer>
     </main>
 
-    <div id="toast" class="fixed bottom-10 bg-slate-900 text-white px-6 py-2 rounded-full text-xs font-bold opacity-0 transition-opacity pointer-events-none"></div>
+    <div id="toast" class="fixed bottom-10 bg-slate-900 text-white px-6 py-2 rounded-full text-[10px] font-bold opacity-0 transition-opacity pointer-events-none"></div>
 
     <script>
         const CLAVE = "1506";
-        const MASA_BASE = 85.8; // Según datos de tu hoja "Pan Francés"
+        const MASA_BASE = 85.8;
 
         const receta = [
             { n: "Harina", p: 100 }, { n: "Agua", p: 54.5 }, { n: "Levadura", p: 1.7 },
@@ -96,35 +97,47 @@
         };
 
         function verificarAcceso() {
-            if (prompt("Clave de administrador:") === CLAVE) {
-                document.getElementById('settings-panel').classList.remove('hidden');
+            const pass = prompt("Clave de administrador:");
+            if (pass === CLAVE) {
+                const panel = document.getElementById('settings-panel');
+                panel.classList.remove('hidden'); // Forzamos visibilidad
                 renderEditor();
+                showToast("MODO ADMINISTRADOR ACTIVADO");
+            } else if (pass !== null) {
+                alert("Clave incorrecta");
             }
         }
 
-        function cerrarAjustes() { document.getElementById('settings-panel').classList.add('hidden'); }
+        function cerrarAjustes() { 
+            document.getElementById('settings-panel').classList.add('hidden'); 
+        }
 
         function renderEditor() {
             const div = document.getElementById('prices-editor');
             div.innerHTML = '';
             for (let i in precios) {
                 div.innerHTML += `<div class="flex justify-between items-center bg-white p-2 rounded border border-indigo-100">
-                    <span class="text-[10px] font-bold uppercase text-slate-500">${i}</span>
+                    <span class="text-[9px] font-bold uppercase text-slate-400">${i}</span>
                     <input type="number" step="0.000001" value="${precios[i]}" data-ing="${i}" class="p-input w-24 text-right text-xs font-bold text-indigo-600 outline-none">
                 </div>`;
             }
         }
 
         function savePrices() {
-            document.querySelectorAll('.p-input').forEach(i => precios[i.dataset.ing] = parseFloat(i.value));
+            const inputs = document.querySelectorAll('.p-input');
+            inputs.forEach(i => {
+                precios[i.dataset.ing] = parseFloat(i.value) || 0;
+            });
             localStorage.setItem('precios_frances', JSON.stringify(precios));
-            cerrarAjustes(); calcular(); showToast("PRECIOS ACTUALIZADOS");
+            cerrarAjustes(); 
+            calcular(); 
+            showToast("PRECIOS ACTUALIZADOS");
         }
 
         function calcular() {
             const cant = parseInt(document.getElementById('cantidadPanes').value) || 0;
             const masaTotal = cant * MASA_BASE;
-            const harinaBase = masaTotal / 1.75; // Suma de porcentajes es 175%
+            const harinaBase = masaTotal / 1.75; 
             
             let totalC = 0;
             const body = document.getElementById('tabla-body');
@@ -134,10 +147,10 @@
                 const g = (harinaBase * ing.p) / 100;
                 const c = g * (precios[ing.n] || 0);
                 totalC += c;
-                body.innerHTML += `<tr>
+                body.innerHTML += `<tr class="border-b border-slate-50">
                     <td class="py-3 font-medium text-slate-600">${ing.n}</td>
                     <td class="py-3 text-right font-bold text-slate-900">${Math.round(g)} g</td>
-                    <td class="py-3 text-right text-indigo-600 font-mono text-xs">$ ${c.toLocaleString('es-VE',{minimumFractionDigits:2})}</td>
+                    <td class="py-3 text-right text-indigo-600 font-mono text-xs">$ ${c.toLocaleString('es-VE',{minimumFractionDigits:3})}</td>
                 </tr>`;
             });
 
@@ -146,7 +159,9 @@
         }
 
         function showToast(m) { 
-            const t = document.getElementById('toast'); t.innerText = m; t.style.opacity = '1';
+            const t = document.getElementById('toast'); 
+            t.innerText = m; 
+            t.style.opacity = '1';
             setTimeout(() => t.style.opacity = '0', 2000);
         }
 
