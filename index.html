@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Pan Campesino</title>
+    <title>Calculadora Pan Francés</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="p-4 md:p-8 bg-slate-50 font-sans">
 
     <div class="max-w-lg mx-auto bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-slate-100">
         
-        <div class="bg-gradient-to-r from-indigo-700 to-blue-600 p-6 text-center relative">
-            <div class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/20 p-2 rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-            </div>
+        <div class="bg-gradient-to-r from-emerald-700 to-green-600 p-6 text-center">
             <h2 class="text-xl font-black text-white uppercase tracking-widest">
-                Pan Campesino
+                Pan Francés
             </h2>
-            <p class="text-[9px] text-blue-100 font-bold uppercase mt-1 tracking-[0.2em]">
+            <p class="text-[9px] text-emerald-100 font-bold uppercase mt-1 tracking-[0.2em]">
                 Sistema de Gestión - Fernando Araujo
             </p>
         </div>
@@ -27,14 +22,14 @@
         <div class="p-6">
             <div class="mb-8">
                 <label class="block text-[10px] font-bold text-slate-400 uppercase mb-2 text-center tracking-widest">Cantidad de Panes a Producir</label>
-                <input type="number" id="cantidadPanes" value="4" oninput="calcular()" 
-                       class="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-blue-400 rounded-2xl outline-none font-black text-center text-3xl text-slate-700 transition-all">
+                <input type="number" id="cantidadPanes" value="1" oninput="calcular()" 
+                       class="w-full p-4 bg-slate-50 border-2 border-transparent focus:border-green-400 rounded-2xl outline-none font-black text-center text-3xl text-slate-700 transition-all">
             </div>
 
             <div class="grid grid-cols-2 gap-4 mb-8">
-                <div class="bg-blue-50/50 border border-blue-100 rounded-3xl p-4 text-center">
-                    <p class="text-[10px] uppercase font-bold text-blue-400 mb-1">Costo Insumos</p>
-                    <p id="costoTotal" class="text-2xl font-black text-blue-600">Cargando...</p>
+                <div class="bg-emerald-50/50 border border-emerald-100 rounded-3xl p-4 text-center">
+                    <p class="text-[10px] uppercase font-bold text-emerald-500 mb-1">Costo Insumos</p>
+                    <p id="costoTotal" class="text-2xl font-black text-emerald-600">Cargando...</p>
                 </div>
                 <div class="bg-slate-50 border border-slate-100 rounded-3xl p-4 text-center">
                     <p class="text-[10px] uppercase font-bold text-slate-400 mb-1">Masa Total</p>
@@ -56,7 +51,7 @@
             </div>
 
             <button onclick="copiarWhatsApp()" 
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-black py-4 rounded-2xl uppercase text-[11px] tracking-widest transition-all shadow-lg shadow-indigo-100 active:scale-95 flex items-center justify-center gap-3">
+                    class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-4 rounded-2xl uppercase text-[11px] tracking-widest transition-all shadow-lg shadow-emerald-100 active:scale-95 flex items-center justify-center gap-3">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.63 1.438h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
@@ -91,9 +86,12 @@
 
         function calcular() {
             const unidades = parseFloat(document.getElementById('cantidadPanes').value) || 0;
-            const harinaPorPan = 230; 
+            
+            // PESO BASE ACTUALIZADO: 49g de harina por cada Pan Francés (según tu Excel)
+            const harinaPorPan = 49; 
             const harinaTotal = harinaPorPan * unidades;
 
+            // Receta exacta del Pan Francés
             const receta = [
                 { nombre: "Harina", pct: 100 },
                 { nombre: "Agua", pct: 54.5 },
@@ -125,7 +123,7 @@
                         </td>
                         <td class="pr-4 py-4 text-right">
                             <div class="text-[13px] font-black text-slate-900">${formatLatam(cantidadGramos, 1)} gr</div>
-                            <div class="text-[10px] font-bold text-blue-400">$ ${formatLatam(subtotal, 3)}</div>
+                            <div class="text-[10px] font-bold text-emerald-500">$ ${formatLatam(subtotal, 3)}</div>
                         </td>
                     </tr>`;
             });
@@ -140,7 +138,8 @@
             const costoTotal = document.getElementById('costoTotal').innerText;
             const masaTotal = document.getElementById('pesoTotalMasa').innerText;
             
-            const harinaTotal = 230 * unidades;
+            // Re-calculamos para el texto del mensaje
+            const harinaTotal = 49 * unidades;
             const receta = [
                 { nombre: "Harina", pct: 100 },
                 { nombre: "Agua", pct: 54.5 },
@@ -157,7 +156,8 @@
                 listaIngredientes += `${ing.nombre}: ${formatLatam(gramos, 1)}g\n`;
             });
 
-            const texto = `📋 PAN CAMPESINO - ${costoTotal}\n` +
+            // Título actualizado en el mensaje
+            const texto = `📋 PAN FRANCÉS - ${costoTotal}\n` +
                           `MASA TOTAL: ${masaTotal}\n` +
                           `---\n` +
                           listaIngredientes +
@@ -165,7 +165,7 @@
                           `_Sistema de Gestión - Fernando Araujo_`;
 
             navigator.clipboard.writeText(texto).then(() => {
-                alert("¡Resumen detallado copiado! Ya puedes pegarlo en WhatsApp.");
+                alert("¡Resumen detallado de Pan Francés copiado! Ya puedes pegarlo en WhatsApp.");
             });
         }
 
